@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://doculens-3ohe.onrender.com/api',
 });
 
 export const analyzeDocuments = async (doc1, doc2, threshold) => {
