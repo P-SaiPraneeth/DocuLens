@@ -5,8 +5,8 @@ WORKDIR /app
 # Install dependencies
 COPY requirements.txt .
 
-# Install CPU-only PyTorch to save massive amounts of space and memory
-RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
+# Use extra-index-url so pip can still find normal packages on PyPI!
+RUN pip install torch --extra-index-url https://download.pytorch.org/whl/cpu
 RUN pip install -r requirements.txt
 
 # Copy application code
